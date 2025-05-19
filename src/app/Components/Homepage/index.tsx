@@ -64,10 +64,14 @@ const Homepage = () => {
       <nav className={`fixed w-full z-50 py-2 px-3 sm:py-3 sm:px-6 transition-all duration-300 ${scrolled ? "bg-white shadow-md" : "bg-transparent"}`}>
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           <div className="flex items-center z-10">
-            <div className={`mr-2 sm:mr-3 transition-all duration-300 ${scrolled ? "scale-90" : ""}`}>
-              {/* Forex logo as an image */}
-              <Image src="/images/lllll.png" alt="NNM FOREX Logo" width={40} height={24} className="w-8 h-5 sm:w-10 sm:h-6" />
-            </div>
+           <Image 
+  src={scrolled ? "/images/lllll.png" : "/images/lllll.png"} 
+  alt="NNM FOREX Logo" 
+  width={60} 
+  height={44} 
+  className="w-16 h-auto sm:w-20" 
+/>
+
             <div className={`text-base sm:text-lg md:text-xl font-bold transition-colors duration-300 ${scrolled ? "text-blue-500" : "text-white"}`}>NNM FOREX</div>
           </div>
           
@@ -77,7 +81,7 @@ const Homepage = () => {
             <a href="#about" className={`font-medium hover:border-b-2 hover:border-blue-400 transition-all duration-300 ${scrolled ? "text-gray-800 hover:text-blue-500" : "text-gray-200 hover:text-white"}`}>ABOUT US</a>
             <a href="#services" className={`font-medium hover:border-b-2 hover:border-blue-400 transition-all duration-300 ${scrolled ? "text-gray-800 hover:text-blue-500" : "text-gray-200 hover:text-white"}`}>SERVICES</a>
             <a href="#vision" className={`font-medium hover:border-b-2 hover:border-blue-400 transition-all duration-300 ${scrolled ? "text-gray-800 hover:text-blue-500" : "text-gray-200 hover:text-white"}`}>VISION</a>
-            <a href="#strategic" className={`font-medium hover:border-b-2 hover:border-blue-400 transition-all duration-300 ${scrolled ? "text-gray-800 hover:text-blue-500" : "text-gray-200 hover:text-white"}`}>STRATEGY</a>
+            <a href="#faq" className={`font-medium hover:border-b-2 hover:border-blue-400 transition-all duration-300 ${scrolled ? "text-gray-800 hover:text-blue-500" : "text-gray-200 hover:text-white"}`}>FAQ</a>
             <a href="#contact" className={`font-medium hover:border-b-2 hover:border-blue-400 transition-all duration-300 ${scrolled ? "text-gray-800 hover:text-blue-500" : "text-gray-200 hover:text-white"}`}>CONTACT</a>
           </div>
           
@@ -116,7 +120,7 @@ const Homepage = () => {
             <a href="#about" className="text-white text-lg font-bold" onClick={closeMobileMenu}>ABOUT US</a>
             <a href="#services" className="text-white text-lg font-bold" onClick={closeMobileMenu}>SERVICES</a>
             <a href="#vision" className="text-white text-lg font-bold" onClick={closeMobileMenu}>VISION & MISSION</a>
-            <a href="#strategic" className="text-white text-lg font-bold" onClick={closeMobileMenu}>STRATEGY</a>
+            <a href="#faq" className="text-white text-lg font-bold" onClick={closeMobileMenu}>FAQ</a>
             <a href="#contact" className="text-white text-lg font-bold" onClick={closeMobileMenu}>CONTACT</a>
             <button className="mt-6 bg-white text-blue-500 px-6 py-2 rounded-md font-medium shadow-md transition duration-300 transform hover:shadow-lg hover:-translate-y-1">
               GET STARTED
@@ -150,16 +154,24 @@ const Homepage = () => {
                   <p className="text-xs sm:text-sm md:text-lg mb-3 sm:mb-4 md:mb-8 leading-relaxed">
                     Over 10 years of excellence in foreign currency exchange. Regulated by the National Bank of Rwanda and a proud member of Rwanda Forex Bureau Association.
                   </p>
-                  <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:gap-4">
-                    <button className="group bg-blue-500 text-white px-3 sm:px-4 md:px-8 py-2 md:py-3 rounded-md text-sm sm:text-base font-medium shadow-md transition duration-300 transform hover:bg-blue-600 hover:shadow-lg hover:-translate-y-1 flex items-center justify-center sm:justify-start">
-                      <span>CONTACT US</span>
-                      <ArrowRightCircle className="ml-2 h-4 w-4 md:h-5 md:w-5 transition-transform duration-300 group-hover:translate-x-1" />
-                    </button>
-                    <button className="group border-2 border-white text-white px-3 sm:px-4 md:px-8 py-2 md:py-3 rounded-md text-sm sm:text-base font-medium transition duration-300 transform hover:bg-white hover:text-blue-600 hover:shadow-lg hover:-translate-y-1 flex items-center justify-center sm:justify-start">
-                      <span>OUR SERVICES</span>
-                      <ChevronDown className="ml-2 h-4 w-4 md:h-5 md:w-5 transition-transform duration-300 group-hover:rotate-180" />
-                    </button>
-                  </div>
+                <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:gap-4">
+  {/* Contact Us Button */}
+  <a href="#contact" className="w-full sm:w-auto">
+    <button className="group w-full sm:w-auto bg-blue-500 text-white px-3 sm:px-4 md:px-8 py-2 md:py-3 rounded-md text-sm sm:text-base font-medium shadow-md transition duration-300 transform hover:bg-blue-600 hover:shadow-lg hover:-translate-y-1 flex items-center justify-center sm:justify-start">
+      <span>CONTACT US</span>
+      <ArrowRightCircle className="ml-2 h-4 w-4 md:h-5 md:w-5 transition-transform duration-300 group-hover:translate-x-1" />
+    </button>
+  </a>
+
+  {/* Our Services Button */}
+  <a href="#services" className="w-full sm:w-auto">
+    <button className="group w-full sm:w-auto border-2 border-white text-white px-3 sm:px-4 md:px-8 py-2 md:py-3 rounded-md text-sm sm:text-base font-medium transition duration-300 transform hover:bg-white hover:text-blue-600 hover:shadow-lg hover:-translate-y-1 flex items-center justify-center sm:justify-start">
+      <span>OUR SERVICES</span>
+      <ChevronDown className="ml-2 h-4 w-4 md:h-5 md:w-5 transition-transform duration-300 group-hover:rotate-180" />
+    </button>
+  </a>
+</div>
+
                 </div>
               </div>
               
@@ -169,7 +181,7 @@ const Homepage = () => {
                   <div className="bg-blue-500 px-3 sm:px-4 py-2 sm:py-3 md:py-4 text-white">
                     <h3 className="text-base sm:text-lg md:text-xl font-bold flex items-center">
                       <DollarSign className="mr-1 sm:mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                      Live Exchange Rates
+                     Exchange Rates
                     </h3>
                   </div>
                   
@@ -244,16 +256,14 @@ const Homepage = () => {
     
     <div className="grid md:grid-cols-2 gap-16 items-center">
       <div className="relative">
-        <div className="rounded-lg overflow-hidden shadow-2xl transform transition-transform duration-500 hover:scale-105">
-        <Image 
-          src="/images/bui.jpeg" 
-          alt="NNM Forex Trading office" 
-          width={1200} 
-          height={300} 
-          className="object-cover"
-          style={{ width: '100%', height: '100%' }}
-        />
-        </div>
+       <Image 
+  src="/images/forex.jpg" 
+  alt="NNM Forex Trading office"
+  width={600}
+  height={600}
+  className="w-full h-80 md:h-96 object-cover rounded-lg"
+/>
+
         {/* Decorative elements */}
         <div className="absolute -top-10 -left-10 w-32 h-32 border-4 border-blue-200 rounded-lg z-0"></div>
         <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-blue-100 rounded-lg z-0"></div>
@@ -446,110 +456,36 @@ const Homepage = () => {
 </div>
 
     {/* Strategic Objectives Section */}
-<div id="strategic" className="py-20 bg-gray-50">
-  <div className="max-w-6xl mx-auto px-6">
+<div id="faq" className="py-20 bg-gray-50">
+  <div className="max-w-4xl mx-auto px-6">
     <div className="text-center mb-12">
-      <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Strategic Plan 2024-2028</h2>
+      <h2 className="text-4xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
       <div className="w-24 h-1 bg-blue-400 mx-auto mb-8"></div>
-      <p className="text-gray-600 max-w-2xl mx-auto">Our business strategy blueprint is designed to guide our operations and growth over the next five years.</p>
+      <p className="text-gray-600 max-w-2xl mx-auto">Find answers to common questions. If you still have questions, feel free to submit yours below.</p>
     </div>
-    
-    <div className="grid md:grid-cols-3 gap-8">
-      {/* Strategic Objective 1 */}
-      <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
-        <div className="w-12 h-12 flex items-center justify-center bg-blue-400 text-white text-xl font-bold rounded-full mb-6">1</div>
-        <h3 className="text-xl font-semibold mb-4">Expand Business Reach</h3>
-        <p className="text-gray-600 mb-6">
-          Opening additional branches, increasing capitalization, and diversifying our range of services to reach more customers.
-        </p>
-        <ul className="text-gray-600 space-y-2">
-          <li className="flex items-start">
-            <svg className="w-5 h-5 text-blue-400 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-            </svg>
-            Open new branches in Kigali, Rusizi or Rubavu
-          </li>
-          <li className="flex items-start">
-            <svg className="w-5 h-5 text-blue-400 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-            </svg>
-            Increase business capitalization
-          </li>
-          <li className="flex items-start">
-            <svg className="w-5 h-5 text-blue-400 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-            </svg>
-            Introduce bank agent services
-          </li>
-          <li className="flex items-start">
-            <svg className="w-5 h-5 text-blue-400 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-            </svg>
-            Expand to regional and international transfers
-          </li>
-        </ul>
+
+    {/* FAQ Items */}
+    <div className="space-y-6">
+      <div className="bg-white p-6 rounded-lg shadow-md">
+        <h3 className="text-lg font-semibold text-blue-600">How can I become a member?</h3>
+        <p className="text-gray-700 mt-2">You can visit any of our branches with your ID and fill out a membership form.</p>
       </div>
 
-      {/* Strategic Objective 2 */}
-      <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
-        <div className="w-12 h-12 flex items-center justify-center bg-blue-400 text-white text-xl font-bold rounded-full mb-6">2</div>
-        <h3 className="text-xl font-semibold mb-4">Enhance Customer Service</h3>
-        <p className="text-gray-600 mb-6">
-          Improving customer experience through staff training, service standards, and technology adoption.
-        </p>
-        <ul className="text-gray-600 space-y-2">
-          <li className="flex items-start">
-            <svg className="w-5 h-5 text-blue-400 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-            </svg>
-            Annual customer care training for all staff
-          </li>
-          <li className="flex items-start">
-            <svg className="w-5 h-5 text-blue-400 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-            </svg>
-            Implement customer service charter
-          </li>
-          <li className="flex items-start">
-            <svg className="w-5 h-5 text-blue-400 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-            </svg>
-            Adopt digital technologies for service delivery
-          </li>
-        </ul>
+      <div className="bg-white p-6 rounded-lg shadow-md">
+        <h3 className="text-lg font-semibold text-blue-600">Where can I access your services?</h3>
+        <p className="text-gray-700 mt-2">Our services are available at all branches in Kigali and selected districts. Online services are coming soon.</p>
       </div>
 
-      {/* Strategic Objective 3 */}
-      <div className="bg-white p-8 rounded-lg shadow-lg border border-gray-100">
-        <div className="w-12 h-12 flex items-center justify-center bg-blue-400 text-white text-xl font-bold rounded-full mb-6">3</div>
-        <h3 className="text-xl font-semibold mb-4">Strengthen Monitoring & Learning</h3>
-        <p className="text-gray-600 mb-6">
-          Establishing robust data-driven systems to monitor performance and enhance decision-making.
-        </p>
-        <ul className="text-gray-600 space-y-2">
-          <li className="flex items-start">
-            <svg className="w-5 h-5 text-blue-400 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-            </svg>
-            Establish performance tracking mechanisms
-          </li>
-          <li className="flex items-start">
-            <svg className="w-5 h-5 text-blue-400 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-            </svg>
-            Implement sector evaluation policy
-          </li>
-          <li className="flex items-start">
-            <svg className="w-5 h-5 text-blue-400 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
-            </svg>
-            Establish knowledge sharing mechanisms
-          </li>
-        </ul>
+      <div className="bg-white p-6 rounded-lg shadow-md">
+        <h3 className="text-lg font-semibold text-blue-600">What are your business hours?</h3>
+        <p className="text-gray-700 mt-2">We operate Monday to Friday, from 8:00 AM to 5:00 PM. Saturdays until 1:00 PM.</p>
       </div>
     </div>
+
+
   </div>
 </div>
+
 
 {/* Stats Section */}
 <div className="py-16 bg-gray-900 text-white">
@@ -587,74 +523,168 @@ const Homepage = () => {
     </button>
   </div>
 </div>
-   {/* Footer */}
-<footer className="bg-gray-900 text-white py-12">
-  <div className="max-w-6xl mx-auto px-6">
-    <div className="grid md:grid-cols-4 gap-8">
-      <div>
-        <div className="flex items-center mb-6">
-          <div className="text-blue-400 mr-2">
-            <div className="w-6 h-6 bg-blue-400 relative">
-              <div className="absolute w-4 h-4 bg-white top-1 left-1"></div>
-            </div>
-          </div>
-          <div className="text-2xl font-bold text-blue-400">NNM FOREX</div>
-        </div>
-        <p className="text-gray-400">
-          Providing expert financial and marketing advisory services since 2013.
+
+<section id="contact" className="bg-gray-100 text-gray-800 py-12 px-6 md:px-20">
+    <div  className="max-w-5xl mx-auto">
+    <h2 className="text-3xl font-bold mb-6 text-center">Contact Us</h2>
+    <p className="text-center mb-10 text-gray-600">Have questions or need help? Fill out the form below and we’ll get back to you shortly.</p>
+    
+    <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <input
+        type="text"
+        placeholder="Your Name"
+        className="p-3 border border-gray-300 rounded bg-white w-full"
+        required
+      />
+      <input
+        type="email"
+        placeholder="Your Email"
+        className="p-3 border border-gray-300 rounded bg-white w-full"
+        required
+      />
+      <textarea
+        placeholder="Your Message"
+        className="p-3 border border-gray-300 rounded bg-white md:col-span-2 h-32"
+        required
+      ></textarea>
+      <div className="md:col-span-2 text-right">
+        <button type="submit" className="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">
+          Send Message
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+<footer  className="bg-gray-900 text-gray-300 pt-10">
+  <section className="px-6 md:px-20 pb-16">
+    <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 shadow-lg rounded overflow-hidden">
+      
+      {/* Left: Contact Form */}
+      <div className="bg-gray-800 p-8">
+        <h2 className="text-3xl font-bold text-white mb-2">Contact Us</h2>
+        <p className="text-gray-400 mb-8">
+          Feel free to contact us any time. We will get back to you as soon as we can!
         </p>
-      </div>
-      <div>
-        <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-        <ul className="space-y-2">
-          <li><a href="#" className="text-gray-400 hover:text-blue-400">Home</a></li>
-          <li><a href="#" className="text-gray-400 hover:text-blue-400">About Us</a></li>
-          <li><a href="#" className="text-gray-400 hover:text-blue-400">Services</a></li>
-          <li><a href="#" className="text-gray-400 hover:text-blue-400">Case Studies</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 className="text-lg font-semibold mb-4">Contact</h4>
-        <ul className="space-y-2">
-          <li className="text-gray-400">123 KICUKIRO Street</li>
-          <li className="text-gray-400">Kigali,Rwanda 10001</li>
-          <li className="text-gray-400">+250788350686</li>
-          <li className="text-gray-400">info@nnmforex.com</li>
-        </ul>
-      </div>
-      <div>
-        <h4 className="text-lg font-semibold mb-4">Subscribe</h4>
-        <p className="text-gray-400 mb-4">Stay updated with our latest insights</p>
-        <div className="flex">
-          <input type="email" placeholder="Your email" className="px-4 py-2 w-full rounded-l-md focus:outline-none" />
-          <button className="bg-blue-400 text-white px-4 py-2 rounded-r-md hover:bg-blue-500">
-            →
+
+        <form className="space-y-4">
+          <input
+            type="text"
+            placeholder="Name"
+            className="w-full p-3 bg-gray-900 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-500"
+            required
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            className="w-full p-3 bg-gray-900 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-500"
+            required
+          />
+          {/* <textarea
+            placeholder="Message"
+            rows="4"
+            className="w-full p-3 bg-gray-900 border border-gray-700 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-500"
+            required
+          ></textarea> */}
+          <button
+            type="submit"
+            className="bg-blue-500 text-white py-3 px-6 w-full uppercase tracking-wide hover:bg-blue-600"
+          >
+            Send
           </button>
-        </div>
-        <div className="flex space-x-4 mt-6">
-          <a href="#" className="text-gray-400 hover:text-blue-400">
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-            </svg>
-          </a>
-          <a href="#" className="text-gray-400 hover:text-blue-400">
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
-            </svg>
-          </a>
-          <a href="#" className="text-gray-400 hover:text-blue-400">
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path fillRule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clipRule="evenodd" />
-            </svg>
-          </a>
-        </div>
+        </form>
+      </div>
+
+      {/* Right: Contact Info */}
+      <div className="bg-gray-950 text-gray-300 p-8 relative">
+        <div className="absolute top-0 left-0 w-4 h-4 bg-blue-500"></div>
+        <div className="absolute bottom-0 right-0 w-4 h-4 bg-blue-500"></div>
+
+        <h3 className="text-2xl font-semibold text-white mb-6">Info</h3>
+        <ul className="space-y-4 text-sm">
+          <li className="flex items-center gap-3">
+            <span>📧</span>
+            info@nnmforex.com
+          </li>
+          <li className="flex items-center gap-3">
+            <span>📞</span>
+            +250 788 350 686
+          </li>
+          <li className="flex items-center gap-3">
+            <span>🏢</span>
+            123 Kicukiro Street, Kigali
+          </li>
+          <li className="flex items-center gap-3">
+            <span>⏰</span>
+            09:00 - 18:00
+          </li>
+        </ul>
       </div>
     </div>
-    <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
-      © 2025 NNM FOREX TRADING. All rights reserved.
+  </section>
+
+  {/* Main Footer Info */}
+  <div className="px-6 md:px-20 pb-10">
+    <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+
+      {/* Logo & Tagline */}
+      <div className="flex items-start gap-3">
+        <Image
+          src="/images/lllll.png" // use the bright version
+          alt="NNM FOREX Logo"
+          width={40}
+          height={40}
+          className="invert"
+        />
+        <div>
+          <h2 className="text-lg font-bold text-white">NNM FOREX</h2>
+          <p className="text-sm text-gray-400">Your trusted currency exchange partner.</p>
+        </div>
+      </div>
+
+      {/* Quick Links */}
+      <div>
+        <h3 className="text-white font-semibold mb-2">Links</h3>
+        <ul className="space-y-1 text-sm">
+          <li><a href="/about" className="hover:text-white">About</a></li>
+          <li><a href="/services" className="hover:text-white">Services</a></li>
+          <li><a href="/strategy" className="hover:text-white">Strategy</a></li>
+        </ul>
+      </div>
+
+      {/* Contact Info */}
+      <div>
+        <h3 className="text-white font-semibold mb-2">Contact</h3>
+        <p className="text-sm">123 Kicukiro Street<br />Kigali, Rwanda 10001</p>
+        <p className="text-sm mt-1">+250 788 350 686</p>
+        <p className="text-sm">info@nnmforex.com</p>
+      </div>
+
+      {/* Subscribe */}
+      <div>
+        <h3 className="text-white font-semibold mb-2">Subscribe</h3>
+        <p className="text-sm mb-3">Stay up to date with news.</p>
+        <div className="flex">
+          <input
+            type="email"
+            placeholder="Your email"
+            className="w-full p-2 rounded-l bg-gray-800 text-white placeholder-gray-400"
+          />
+          <button className="bg-blue-500 px-4 rounded-r text-white">→</button>
+        </div>
+      </div>
     </div>
   </div>
+
+  {/* Copyright */}
+  <div className="border-t border-gray-700 pt-6 text-center text-sm text-gray-500 px-6">
+    © 2025 NNM FOREX TRADING. All rights reserved.
+  </div>
 </footer>
+
+
+
 </div>
 );
 };
